@@ -16,36 +16,39 @@ entity binaryEncoder is
 end entity;
 
 architecture behav0 of binaryEncoder is
-	signal temp: integer;
+
 begin
 
-	process(input)
+    process(input)
+	variable temp: integer;
 	begin
+		
+		temp := 0;
 	
 		if priorityMSB then
 			for i in inputWidth-1 downto 0 loop 
 				if input(i) = '1' then
-					temp <= i;
+					temp := i;
 					exit;
 				end if;
 			end loop;
 		else
 			for i in 0 to inputWidth-1 loop 
 				if input(i) = '1' then
-					temp <= i;
+					temp := i;
 					exit;
 				end if;
 			end loop;
 		end if;
+		
+		output <= std_logic_vector(to_unsigned(temp, output'length));
 	
 	end process;
 	
-	output <= std_logic_vector(to_unsigned(temp, output'length));
-	
 	
 	gerarValido: if generateValid generate
-		valid <= '1' when signed(input) = 0 else '0';
+		valid <= '1' when to_integer(unsigned(input)) > 0 else
+        '0';
 	end generate;
-	
-	
+
 end architecture;
