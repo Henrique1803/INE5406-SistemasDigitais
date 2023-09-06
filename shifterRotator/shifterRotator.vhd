@@ -1,6 +1,5 @@
 -- COMPLETE COM O NOME COMPLETO DOS ALUNOS QUE FAZEM ESTA AVALIACAO
 -- Aluno 1: Henrique Mateus Teodoro
--- Aluno 2:
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -23,9 +22,8 @@ entity shifterRotator is
 end entity;
 
 architecture behav of shifterRotator is
-	 
+    -- Complete
 begin
-
 
     deslocador: if isShifter generate 
     
@@ -41,12 +39,11 @@ begin
         
     end generate;
 	 
-	 rotacionador: if not isShifter generate 
+	rotacionador: if not isShifter generate 
     
         output <= std_logic_vector(rotate_left(unsigned(input), bitsToShift)) when toLeft else
 				std_logic_vector(rotate_right(unsigned(input), bitsToShift));
         
     end generate;
-	 
-	 
+    
 end architecture; 
