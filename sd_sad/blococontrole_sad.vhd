@@ -79,7 +79,7 @@ begin
 	 cpB <= '1' when currentState = S3 else '0';
 	 zsoma <= '1' when currentState = S1 else '0';
 	 csoma <= '1' when (currentState = S1 or currentState = S4) else '0';
-	 csad_reg <= '1' when currentState = S5;
+	 csad_reg <= '1' when currentState = S5 else '0';
 	 
 	 
 end architecture;
