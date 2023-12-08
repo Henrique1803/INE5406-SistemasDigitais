@@ -24,7 +24,7 @@ begin
 	 process(currentState, iniciar, menor) is
 	 begin
 		
-		nextState <= currentState;
+		nextState <= S0;
 		
 		case currentState is
 		

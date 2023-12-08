@@ -69,6 +69,9 @@ begin
 ctrlSetaRestoMenosDivisorOUctrlSetaResto <= ctrlSetaRestoMenosDivisor or ctrlSetaResto;
 sttRestoMaiorIgualDivisor <= not(saidaRestoMenorQueDivisor);
 
+resto <= saidaResto;
+quociente <= saidaQuociente;
+
 
 registradorQuociente: registerN
 	generic map(width => largDividendo, resetValue => 0)

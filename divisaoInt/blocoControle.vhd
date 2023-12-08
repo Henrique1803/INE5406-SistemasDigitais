@@ -70,6 +70,12 @@ end process;
 
 --lógica de saída
 
+retorno <= '1' when currentState = L08 or currentState=L01 else '0';
+ctrlSetaResto <= '1' when currentState = L02 else '0';
+ctrlSetaQuocienteEmZero <= '1' when currentState = L03 else '0';
+ctrlSetaRestoMenosDivisor <= '1' when currentState = L05 else '0';
+ctrlSetaQuocienteMaisUm <= '1' when currentState = L06 else '0'; 
+
 
 end architecture;
             

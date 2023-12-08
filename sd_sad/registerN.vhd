@@ -22,7 +22,7 @@ begin
 	process (clock, reset) is
 	begin
 			if reset = '1' then
-				registro <= (others => '0');
+				registro <= std_logic_vector(to_unsigned(resetValue, width));
          elsif rising_edge(clock) and load = '1' then
             registro <= input;
         end if;

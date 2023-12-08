@@ -82,19 +82,9 @@ begin
 	cAC <= '1' when (currentState = S1 or currentState = S3)  else '0';
 	cT <= '1' when (currentState = S1 or currentState = S3)  else '0';
 	
+	stateBC <= currentState;
+	
 end architecture;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
